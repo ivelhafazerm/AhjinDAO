@@ -127,7 +127,7 @@ text.circ {
 }
 
 @media only screen and (max-width: 900px) {
-  text {
+  text.pc {
     font-size: 500%;
     font-weight: normal;
     position: absolute;
