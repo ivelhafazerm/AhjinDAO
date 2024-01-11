@@ -131,7 +131,7 @@ text.circ {
     font-size: 500%;
     font-weight: normal;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-transform: uppercase;
