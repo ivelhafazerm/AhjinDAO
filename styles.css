@@ -64,7 +64,16 @@ header {
   }
 }
 
-text {
+text.pc {
+  font-size: 15vh;
+  font-weight: normal;
+  position: absolute;
+  top: 75%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+}
+text.circ {
   font-size: 15vh;
   font-weight: normal;
   position: absolute;
