@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IYKYK</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/circular-revealer@0.0.8/dist/index.iife.js"></script>
+  </head>
+  <body>
+    <header>
+      <button class="button circ-btn-js" type="button"></button>
+      <div>
+        <circ class="header__circ circ-js" data-active="false">
+          <ul class="header__menu">
+            <li class="header__menu-text">
+              <a href="https://x.com/ivelhaf02" target="_blank"><text class="circ">Go Fuck Yourself!</text></a>
+            </li>
+          </ul>
+        </circ>
+      </div>
+    </header>
+    <text class="pc">_IF_<br />YKYK*</text>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const revealercirc = window.revealer({
+          revealElementSelector: ".circ-js",
+          options: {
+            anchorSelector: ".circ-btn-js",
+          },
+        });
+
+        const actionBtn = document.querySelector(".circ-btn-js");
+        actionBtn.addEventListener("click", () => {
+          if (!revealercirc.isRevealed()) {
+            revealercirc.reveal();
+            actionBtn.setAttribute("data-open", true);
+          } else {
+            revealercirc.hide();
+            actionBtn.setAttribute("data-open", false);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
