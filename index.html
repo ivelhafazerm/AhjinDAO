@@ -4,45 +4,62 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AhjinDAO</title>
+    <title>Ahjin DAO</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/circular-revealer@0.0.8/dist/index.iife.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
   </head>
   <body>
-    <header>
-      <button class="button circ-btn-js" type="button"></button>
-      <div>
-        <circ class="header__circ circ-js" data-active="false">
-          <ul class="header__menu">
-            <li class="header__menu-text">
-              <a href="https://x.com/ivelhaf02" target="_blank"><text class="circ">Go Fuck Yourself!</text></a>
-            </li>
-          </ul>
-        </circ>
+    <div class="container">
+      <div class="site-logo">AhjinDAO</div>
+      <div class="navbar">
+        <div class="site-info">Based in Indonesia</div>
       </div>
-    </header>
-    <text class="pc">_IF_<br />YKYK*</text>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const revealercirc = window.revealer({
-          revealElementSelector: ".circ-js",
-          options: {
-            anchorSelector: ".circ-btn-js",
-          },
-        });
+      <div class="header-container">
+        <div class="header">
+          <span>W</span>
+          <span>E</span>
+          <span>L</span>
+          <span>C</span>
+          <span>O</span>
+          <span>M</span>
+          <span>E</span>
+        </div>
+      </div>
 
-        const actionBtn = document.querySelector(".circ-btn-js");
-        actionBtn.addEventListener("click", () => {
-          if (!revealercirc.isRevealed()) {
-            revealercirc.reveal();
-            actionBtn.setAttribute("data-open", true);
-          } else {
-            revealercirc.hide();
-            actionBtn.setAttribute("data-open", false);
-          }
-        });
-      });
-    </script>
+      <div class="footer">
+        <span>
+          <a href="https://discord.gg/QNsUTBUbJT" target="_blank">Discord</a>
+          <a href="https://x.com/ahjindao" target="_blank">X</a>
+        </span>
+        <div class="footer-wrapper"></div>
+      </div>
+    </div>
   </body>
+  <script>
+    gsap.from(".navbar > div", 1.6, {
+      opacity: 0,
+      y: 60,
+      ease: Expo.easeInOut,
+      delay: 2.4,
+    });
+    gsap.from(".site-logo", 1.6, {
+      opacity: 0,
+      y: 40,
+      ease: Expo.easeInOut,
+      delay: 2.4,
+    });
+    gsap.from(".header > span", 1.5, {
+      top: "-100vh",
+      ease: "bounce.out",
+      delay: 1,
+      stagger: 0.2,
+    });
+    gsap.to(".footer span", 0.4, {
+      opacity: 1,
+      y: -40,
+      ease: Expo.easeInOut,
+      delay: 2.4,
+    });
+  </script>
 </html>

@@ -1,153 +1,107 @@
-body {
+@font-face {
+  font-family: good;
+  src: url(/Fonts/Good\ Old\ DOS\ Smooth.ttf);
+}
+@font-face {
+  font-family: next;
+  src: url(/Fonts/Next\ Bro.ttf);
+}
+@font-face {
+  font-family: city;
+  src: url(/Fonts/Citylist.ttf);
+}
+* {
   margin: 0;
-  padding: 40px 30px;
-  height: 100vh;
-  color: #fff;
-  background-color: #000;
-  font-family: "Trud Type", Helvetica, sans-serif;
-  font-size: 1rem;
-  line-height: 1.2;
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-
-header {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-}
-
-.button {
-  z-index: 2;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #c6e421;
-  border: 0;
-  cursor: pointer;
-  position: fixed;
-  top: 18px;
-  right: 0;
-  margin: 20px;
-  outline: none;
-  animation-duration: 300ms;
-  animation-timing-function: ease;
-}
-
-.button[data-open="true"] {
-  background-color: #000;
-  animation-name: scale;
-}
-
-.button[data-open="false"] {
-  transition: background-color 250ms linear;
-  -webkit-transition: background-color 250ms linear;
-  -moz-transition: background-color 250ms linear;
-  -ms-transition: background-color 250ms linear;
-  -o-transition: background-color 250ms linear;
-}
-
-@keyframes scale {
-  from {
-    transform: scale(0);
-  }
-
-  to {
-    transform: scale(100%);
-    -webkit-transform: scale(100%);
-    -moz-transform: scale(100%);
-    -ms-transform: scale(100%);
-    -o-transform: scale(100%);
-  }
-}
-
-text.pc {
-  font-size: 15vh;
-  font-weight: normal;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-transform: uppercase;
-}
-text.circ {
-  font-size: 15vh;
-  font-weight: normal;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-transform: uppercase;
-}
-
-.header__circ {
-  background-color: #c6e421;
-  position: fixed;
-  overflow: hidden;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  padding: 40px 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  visibility: hidden;
-  clip-path: circle(var(--radius) at calc(100% - 55px) 47px);
-}
-
-.header__circ[data-active="true"] {
-  visibility: visible;
-}
-
-.header__menu {
   padding: 0;
-  margin: 0;
+  box-sizing: border-box;
 }
 
-.header__menu > .header__menu-text {
-  font-size: 12vh;
-  padding-top: 2rem;
+html,
+body {
+  background: url(bg-2.jpg);
+  color: #262c3c;
 }
 
-.header__menu > .header__menu-text:not(:last-of-type) {
-  margin-bottom: 0em;
+.site-logo {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: good;
+  font-size: 2.4em;
+
+  line-height: 100px;
 }
 
-.header__menu-text a {
-  letter-spacing: -4px;
-  font-weight: 300 !important;
-  color: #000;
+.navbar {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  font-family: next;
+  line-height: 100px;
+}
+
+.menu-item {
+  margin-left: 60px;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    display: none;
+  }
+}
+
+.header-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header > span {
+  font-family: next;
+  font-size: 10vw;
+  position: relative;
+}
+
+.footer {
+  position: fixed;
+  bottom: 5em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer span {
+  position: relative;
+  top: 30px;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.4em;
+  transition: 1s;
+  opacity: 0;
+  font-family: city;
+}
+.footer span a {
+  color: #262c3c;
+  margin-left: 20px;
+}
+.menu-item a {
+  color: #262c3c;
   text-decoration: none;
 }
 
-@media only screen and (max-width: 900px) {
-  text.pc {
-    font-size: 300%;
-    font-weight: normal;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-transform: uppercase;
-  }
-
-  text.circ {
-    font-size: 8vh;
-    font-weight: normal;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-transform: uppercase;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-  }
+.footer-wrapper:after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 110%;
+  height: 100%;
+  margin: 0 auto;
+  transition: 1s;
 }
